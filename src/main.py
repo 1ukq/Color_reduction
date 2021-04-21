@@ -2,7 +2,9 @@ import matplotlib.pyplot as plt
 import matplotlib.image as mpllimg
 import numpy as np
 import os
+
 from utils import *
+from utils_bayer import *
 
 # IMAGE LIST
 os.chdir("../images")
@@ -10,7 +12,7 @@ list_img = os.listdir()
 list_img.sort()
 
 # IMAGE TO MATRIX & MATRIX INFOS
-img = mpllimg.imread(list_img[2])
+img = mpllimg.imread(list_img[0])
 h_img = len(img)
 w_img = len(img[1])
 
@@ -25,7 +27,9 @@ ms_centree = '''
 59 35 31 19 23 27 32 52;
 63 55 51 39 43 47 56 60
 '''
-ms = np.matrix(ms_centree)
+ms_bayer = bayer(8)
+
+ms = np.matrix(ms_bayer)
 
 # CREATE BIG MATRIX
 cr_img = np.zeros((1, w_img*ms.shape[1] + 1))
