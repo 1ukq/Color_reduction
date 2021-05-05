@@ -14,6 +14,10 @@ def horizontale_centree():
     '''
     return np.matrix(hc8)
 
+def matricenulle():
+    hc = '''1'''
+    return np.matrix(hc)
+
 # BAYER
 def bayer_compatible(n):
     val = 2

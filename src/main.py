@@ -8,8 +8,8 @@ from matrice_seuillage import *
 from errorDiffusion import *
 
 # PARAMETRES
-num_image = 3
-ms = bayer(8)
+num_image = 2
+ms = matricenulle()
 
 # IMAGE LIST
 os.chdir("../images")
@@ -20,6 +20,7 @@ list_img.sort()
 img = mpllimg.imread(list_img[num_image])
 h_img = len(img)
 w_img = len(img[1])
+#imgC = FloydErrDiffusion(img, ms)
 
 # CREATE NEW IMAGE
 cr_img = np.zeros((1, w_img*ms.shape[1] + 1))
