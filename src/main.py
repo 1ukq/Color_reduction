@@ -5,6 +5,7 @@ import os
 
 from utils import *
 from matrice_seuillage import *
+from errorDiffusion import *
 
 # PARAMETRES
 num_image = 3
