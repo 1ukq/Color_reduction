@@ -5,9 +5,11 @@ import os
 
 from utils import *
 from matrice_seuillage import *
+from errorDiffusion import *
 
 # PARAMETRES
-num_image = 3
+num_image = 1
+error_diffusion = True
 ms = bayer(8)
 
 # IMAGE LIST
@@ -19,6 +21,10 @@ list_img.sort()
 img = mpllimg.imread(list_img[num_image])
 h_img = len(img)
 w_img = len(img[1])
+
+# ERROR DIFFUSION
+if(error_diffusion):
+    img = FloydErrDiffusion(img, ms)
 
 # CREATE NEW IMAGE
 cr_img = np.zeros((1, w_img*ms.shape[1] + 1))
@@ -32,7 +38,4 @@ for i in range(h_img):
 
 # SHOW
 plt.imshow(cr_img, cmap = 'Greys')
-plt.show()
-
-plt.imshow(img, cmap = 'Greys')
 plt.show()
