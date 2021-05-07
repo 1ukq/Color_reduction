@@ -4,8 +4,8 @@ def val_px(img, x, y):
     return img[x,y][0]
 
 def newValPixel(mat_ref, img, x, y):
-    v = max(mat_ref.max(), 1)
-    return val_px(img, x, y)*v/255
+    v = max(mat_ref.max(), 1)+1
+    return round(val_px(img, x, y)*v/255)
 
 def get_matrix(mat_ref, v):
     (h,w) = mat_ref.shape

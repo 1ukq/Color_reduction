@@ -8,9 +8,9 @@ from matrice_seuillage import *
 from errorDiffusion import *
 
 # PARAMETRES
-num_image = 1
+num_image = 0
 error_diffusion = True
-ms = naif_uniforme()
+ms = bayer(8)
 
 # IMAGE LIST
 os.chdir("../images")
