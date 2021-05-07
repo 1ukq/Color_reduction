@@ -1,5 +1,10 @@
 import numpy as np
 
+# NAIF UNIFORME
+def naif_uniforme():
+    nu = '''0.5'''
+    return np.matrix(nu)
+
 # TRAME HORIZONTALE À POINT CENTRÉ BLANC
 def horizontale_centree():
     hc8 = '''

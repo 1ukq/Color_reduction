@@ -10,7 +10,7 @@ from errorDiffusion import *
 # PARAMETRES
 num_image = 1
 error_diffusion = True
-ms = bayer(8)
+ms = naif_uniforme()
 
 # IMAGE LIST
 os.chdir("../images")
