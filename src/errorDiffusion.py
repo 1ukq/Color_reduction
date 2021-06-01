@@ -7,6 +7,7 @@ from PIL import Image
 
 
 def FloydErrDiffusion(img, matriceSeuilage):
+    print("Preparing error diffusion...")
     width = len(img)
     height = len(img[0])
     imgC = np.copy(img)

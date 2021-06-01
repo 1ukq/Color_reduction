@@ -16,7 +16,31 @@ def get_matrix(mat_ref, v):
                 mat[i,j] = 1
     return mat
 
-
 def px_to_matrix(mat_ref, img, x, y):
     v = newValPixel(mat_ref, img, x, y)
     return get_matrix(mat_ref, v)
+
+def reduce_color(img, ms):
+    print("Reducing...")
+    h_img = img.shape[0]
+    w_img = img.shape[1]
+
+    # create first line
+    cr_img = px_to_matrix(ms, img, 0, 0)
+    for j in range(1, w_img):
+        m = px_to_matrix(ms, img, 0, j)
+        cr_img = np.concatenate((cr_img, m), axis = 1)
+
+    for i in range(1, h_img):
+        # create next line
+        line = px_to_matrix(ms, img, i, 0)
+        print("Line",i)
+        for j in range(1, w_img):
+            m = px_to_matrix(ms, img, i, j)
+            # concat matrix to line
+            line = np.concatenate((line, m), axis = 1)
+
+        # concat line to cr_img
+        cr_img = np.concatenate((cr_img, line), axis = 0)
+
+    return cr_img
