@@ -19,6 +19,22 @@ def horizontale_centree():
     '''
     return np.matrix(hc8)
 
+def diagonale():
+    d8 = '''
+    11 27 17 29 37 53 43 35;
+    23  1  7 13 51 61 59 41;
+    15  5  3 21 47 57 63 49;
+    31 19 25  9 33 45 55 38;
+    39 54 44 32  8 24 18 30;
+    48 62 56 46 20  2  4 14;
+    40 58 60 50 12  6  0 22;
+    34 42 52 36 28 16 26 10
+    '''
+    return np.matrix(d8)
+
+def naif(seuil):
+    return seuil
+
 # BAYER
 def bayer_compatible(n):
     val = 2

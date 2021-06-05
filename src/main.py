@@ -9,8 +9,8 @@ from errorDiffusion import *
 
 # PARAMETRES
 num_image = 1
-error_diffusion = True
-ms = bayer(4)
+error_diffusion = False
+ms = bayer(8)
 
 # IMAGE LIST
 os.chdir("../images")
@@ -29,4 +29,7 @@ cr_img = reduce_color(img, ms)
 
 # SHOW
 plt.imshow(cr_img, cmap = 'Greys')
+plt.show()
+
+plt.imshow(img, cmap = 'Greys')
 plt.show()

@@ -25,6 +25,16 @@ def reduce_color(img, ms):
     h_img = img.shape[0]
     w_img = img.shape[1]
 
+    if(isinstance(ms, int)):
+        # cas de l'approche naive
+        cr_img = np.zeros((h_img, w_img))
+        seuil = ms
+        for i in range(h_img):
+            for j in range(w_img):
+                if(img[i,j][0] < seuil):
+                    cr_img[i,j] = 1
+        return cr_img
+
     # create first line
     cr_img = px_to_matrix(ms, img, 0, 0)
     for j in range(1, w_img):
