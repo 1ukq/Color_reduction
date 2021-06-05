@@ -4,7 +4,10 @@ def val_px(img, x, y):
     return img[x,y][0]
 
 def newValPixel(mat_ref, img, x, y):
-    v = max(mat_ref.max(), 1)+1
+    v = 1
+    if(not isinstance(mat_ref, int)):
+        # pas naif
+        v = mat_ref.max() +1
     return round(val_px(img, x, y)*v/255)
 
 def get_matrix(mat_ref, v):
@@ -30,6 +33,7 @@ def reduce_color(img, ms):
         cr_img = np.zeros((h_img, w_img))
         seuil = ms
         for i in range(h_img):
+            print("Line",i)
             for j in range(w_img):
                 if(img[i,j][0] < seuil):
                     cr_img[i,j] = 1

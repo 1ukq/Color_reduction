@@ -1,12 +1,7 @@
 import numpy as np
 
-# NAIF UNIFORME
-def naif_uniforme():
-    nu = '''0.5'''
-    return np.matrix(nu)
-
-# TRAME HORIZONTALE À POINT CENTRÉ BLANC
-def horizontale_centree():
+# HORIZONTALE
+def horizontale():
     hc8 = '''
     62 58 45 41 37 49 53 61;
     54 34 35 31 17 29 33 57;
@@ -19,6 +14,7 @@ def horizontale_centree():
     '''
     return np.matrix(hc8)
 
+# DIAGONALE
 def diagonale():
     d8 = '''
     11 27 17 29 37 53 43 35;
@@ -32,6 +28,7 @@ def diagonale():
     '''
     return np.matrix(d8)
 
+# NAIF
 def naif(seuil):
     return seuil
 
